@@ -7,6 +7,8 @@ body {
 .App {
   margin: 0% 5% 0% 5%;
   text-align: center;
+  position: relative;
+  background: #ccc;
 }
 
 .TwirlyPig {
@@ -27,7 +29,7 @@ body {
 }
 
 .headerText {
-  color: #F5A9BC;
+  color: #f5a9bc;
   font-size: 3em;
   margin: 0% 2% 0% 2%;
 }
@@ -35,18 +37,18 @@ body {
 .largeHeader {
   font-size: 3.5em;
   font-weight: bold;
-  color: #3B0B0B;
+  color: #3b0b0b;
 }
 
 .smallHeader {
   font-size: 1.75em;
   font-weight: bold;
-  color: #3B0B0B;
+  color: #3b0b0b;
 }
 
 .normalText {
   font-family: Georgia, serif;
-  font-size: .75em;
+  font-size: 0.75em;
 }
 
 .hoggyText {
@@ -64,20 +66,18 @@ ul {
 
 .normalText ul {
   font-family: Georgia, serif;
-  font-size: .75em;
+  font-size: 0.75em;
   text-align: left;
 }
 
 .subtleText {
-  color: #D1D1D1;
-  font-size: .75em;
+  color: #d1d1d1;
+  font-size: 0.75em;
 }
-
 
 .indexWrapper {
   margin: auto;
 }
-
 
 .pigTile {
   display: inline;
@@ -86,7 +86,7 @@ ul {
   float: left;
   margin: 2%;
   padding: 1%;
-  outline: #3B0B0B dotted thick;
+  outline: #3b0b0b dotted thick;
   transition: 0.75s;
   opacity: 1;
 }
@@ -109,7 +109,7 @@ ul {
 }
 
 .pigTile h3 {
-  color: #FBB;
+  color: #fbb;
 }
 
 .minPigTile {
@@ -128,18 +128,16 @@ ul {
   transform: scale(1.05);
 }
 
-
 .App-logo {
   animation: App-logo-spin infinite 5s linear;
   height: 80px;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .footer {
   padding: 1%;
   clear: both;
 }
-
 
 @keyframes App-logo-spin {
   from {
@@ -150,3 +148,142 @@ ul {
     transform: rotate(360deg);
   }
 }
+.card {
+  border: 1px solid red;
+  box-shadow: 0px 0px 15px -5px;
+  transition: 0.3s;
+  animation: ease-in;
+  border: coral 3px;
+}
+.card:hover {
+  transform: scale(1.08);
+  box-shadow: 0px 0px 15px 0px;
+  border: 1px solid red;
+  cursor: pointer;
+}
+.card img {
+  width: 100%;
+}
+.hogDetails {
+  max-width: 50rem;
+  background-color: white;
+  min-width: 40rem;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid #ffff00;
+  padding: 10px;
+  border: 1px solid red;
+  box-shadow: 0px 0px 15px -5px;
+  transition: 0.3s;
+  animation: ease-in;
+  z-index: 500;
+  padding: 30px 10px;
+}
+
+.card:hover {
+  transform: scale(1.08);
+  box-shadow: 0px 0px 15px 0px;
+  z-index: 200;
+  cursor: pointer;
+}
+.card img,
+.hogDetails img {
+  height: 200px;
+  width: 100%;
+}
+
+.quit {
+  background: transparent;
+  background-image: url(./assets/X.jpg);
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.filterContainer {
+  background: #ccc;
+  height: 10rem;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.filter {
+  border: 1px solid black;
+  height: 200px;
+  width: 400px;
+  position: absolute;
+  margin: auto;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.filterContainer input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 80px;
+  width: 80px;
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+input[type="checkbox"]:checked {
+  background-image: url(./assets/true.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.filterContainer label {
+  color: #4c4c4c;
+  font-size: 55px;
+  font-weight: 600;
+}
+.sort {
+  border: 1px solid black;
+  height: 200px;
+  width: 400px;
+  position: absolute;
+  margin: auto;
+  right: 0;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.hide {
+}
+.hide button {
+  background-color: #ffff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px 15px;
+  color: #4c4c4c;
+  font-size: 55px;
+  font-weight: 600;
+}
+select {
+  outline: 0;
+  box-shadow: none;
+  background-color: #ffff;
+  width: 50%;
+  border: 0;
+  cursor: pointer;
+}
+h2 {
+  font-size: 40px;
+}
+h4 {
+  font-size: 20px;
+}
+
+/*////////*/
