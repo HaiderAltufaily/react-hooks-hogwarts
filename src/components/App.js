@@ -16,20 +16,23 @@ function App() {
     greased: false,
     weight: "",
     image: "",
+    "highest medal achieved": "",
   });
-  const [submitted, setSubmitted] = useState(false);
+
+  const [newArray, setNewArray] = useState(hogs);
+  const [addMenu, setAddMenu] = useState(false);
 
   function filterHandle(e) {
     setGreased(e.target.checked);
   }
 
-  const displayHogs = hogs
+  const displayHogs = newArray
     .filter((hog) => (greased ? hog.greased : true))
     .filter((hog) => show)
     ?.sort((a, b) => {
       if (sortBy === "weight") return a.weight - b.weight;
       else if (sortBy === "name") {
-        if (a.name > b.name) return 1;
+        if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
         else return -1;
       }
     });
@@ -46,16 +49,26 @@ function App() {
     if (name === greased) {
       value = e.target.checked;
     }
-    console.log(name);
     console.log(value);
-
     setFormData({ ...formData, [name]: value });
   }
   function handleSubmit(e) {
     e.preventDefault();
-    setSubmitted(true);
+
+    setNewArray([...newArray, formData]);
+    setFormData({
+      name: "",
+      specialty: "",
+      greased: false,
+      weight: "",
+      image: "",
+      "highest medal achieved": "",
+    });
   }
-  console.log(submitted);
+  function handleShowMenu() {
+    setAddMenu(!addMenu);
+  }
+
   return (
     <div className="App">
       <Nav />
@@ -72,6 +85,8 @@ function App() {
         handleSubmit={handleSubmit}
         handleForm={handleForm}
         formData={formData}
+        handleShowMenu={handleShowMenu}
+        addMenu={addMenu}
       />
 
       <HogLists show={show} hogs={displayHogs} />

@@ -15,6 +15,7 @@ function HogDetails({ hog, setShowDetails }) {
         <h4>Specialty: {hog.specialty}</h4>
         <h4>Greased: {hog.greased ? "No" : "Yes"}</h4>
         <h4>Weight: {hog.weight}</h4>
+        <h4>Heighest Medal: {hog["highest medal achieved"]}</h4>
       </div>
     </div>
   );

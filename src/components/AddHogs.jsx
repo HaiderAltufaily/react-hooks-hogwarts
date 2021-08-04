@@ -1,7 +1,13 @@
 import React from "react";
 
-function AddHogs({ handleForm, formData, handleSubmit }) {
-  return (
+function AddHogs({
+  handleForm,
+  formData,
+  handleSubmit,
+  handleShowMenu,
+  addMenu,
+}) {
+  const showForm = addMenu ? (
     <form onSubmit={(e) => handleSubmit(e)} action="">
       <div className="container">
         <label htmlFor="">Name</label>
@@ -56,8 +62,28 @@ function AddHogs({ handleForm, formData, handleSubmit }) {
           id=""
         />
       </div>
-      <button type="submit">Add Hog</button>
+      <div className="container">
+        <label htmlFor="">Highest Medal</label>
+        <input
+          required
+          onChange={(e) => handleForm(e)}
+          value={formData["highest medal achieved"]}
+          type="text"
+          name="highest medal achieved"
+          id=""
+        />
+      </div>
+      <div className="btn">
+        <button type="submit">Add </button>
+      </div>
     </form>
+  ) : null;
+  return (
+    <div className="formContainer">
+      <button onClick={handleShowMenu}>Add Hog</button>
+
+      {showForm}
+    </div>
   );
 }
 
